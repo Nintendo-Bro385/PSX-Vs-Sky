@@ -59,7 +59,7 @@
 		//Characters
 		{Char_BF_New,    FIXED_DEC(225,1),  FIXED_DEC(138,1)},
 		{Char_Clucky_New, FIXED_DEC(16,1),  FIXED_DEC(118,1)},
-		{NULL},
+		{Char_GF_New,        FIXED_DEC(0,1),    FIXED_DEC(0,1)},
 		
 		//Stage background
 		Back_Week1_New,

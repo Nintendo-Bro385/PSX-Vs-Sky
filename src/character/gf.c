@@ -1,4 +1,4 @@
-/*
+ /*
   This Source Code Form is subject to the terms of the Mozilla Public
   License, v. 2.0. If a copy of the MPL was not distributed with this
   file, You can obtain one at http://mozilla.org/MPL/2.0/.
@@ -32,7 +32,7 @@ typedef struct
 	Character character;
 	
 	//Render data and state
-	IO_Data arc_main, arc_scene;
+	IO_Data arc_main;
 	IO_Data arc_ptr[GF_Arc_Max];
 	
 	Gfx_Tex tex;
@@ -170,7 +170,6 @@ void Char_GF_Free(Character *character)
 	
 	//Free art
 	Mem_Free(this->arc_main);
-	Mem_Free(this->arc_scene);
 }
 
 Character *Char_GF_New(fixed_t x, fixed_t y)
