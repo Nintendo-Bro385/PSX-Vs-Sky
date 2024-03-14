@@ -2014,7 +2014,7 @@ void Stage_Tick(void)
 							    		else
 							    			stage.ending=2;
 							    	}
-				    	if(stage.prefs.botplay ==1)
+				    	if(stage.prefs.botplay ==0)
 				    		{
 					    		if (stage.stage_diff == StageDiff_Hard)
 					    		{
