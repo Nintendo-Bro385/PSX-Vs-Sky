@@ -1,0 +1,19 @@
+all: \
+  iso/music/menu.xa \
+  iso/music/week1a.xa \
+  iso/music/week1b.xa \
+  iso/music/dia.xa \
+  iso/music/end.xa \
+
+# XA converts
+iso/music/%.xa: iso/music/%.ogg
+	tools/psxavenc/psxavenc -f 37800 -t xa -b 4 -c 2 -F 1 -C 0 $< $@
+iso/music/%.xa:
+	tools/xainterleave/xainterleave $@
+
+# XA interleaves
+iso/music/menu.xa: iso/music/freaky.xa iso/music/gameover.xa iso/music/freeky.xa iso/music/ludum.xa
+iso/music/week1a.xa: iso/music/wife-foreveri.xa iso/music/wife-foreverv.xa iso/music/skyi.xa iso/music/skyv.xa
+iso/music/week1b.xa: iso/music/manifesti.xa iso/music/manifestv.xa iso/music/cluckedi.xa iso/music/cluckedv.xa
+iso/music/dia.xa: iso/music/shift.xa iso/music/fest.xa iso/music/cut.xa iso/music/blank.xa
+iso/music/end.xa: iso/music/gend.xa iso/music/bend.xa

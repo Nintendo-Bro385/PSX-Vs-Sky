@@ -1,0 +1,4 @@
+1 xa manifestv.xa 1 0
+1 xa manifesti.xa 1 1
+1 xa cluckedv.xa 1 2
+1 xa cluckedi.xa 1 3

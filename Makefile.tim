@@ -1,0 +1,94 @@
+all: \
+	iso/menu/menu.arc \
+	iso/menu/backgrounds/week.arc \
+	iso/menu/loading.tim \
+	iso/saveicon.tim \
+	iso/saving.tim \
+	iso/font/boldfont.tim \
+	iso/font/arial.tim \
+	iso/font/cdr.tim \
+	iso/stage/hud0.tim \
+	iso/stage/hud1.tim \
+	iso/stage/hud2.tim \
+	iso/stage/hud3.tim \
+	iso/stage/hud4.tim \
+	iso/stage/dia.tim \
+	iso/stage/portraits/bf.arc \
+	iso/stage/portraits/sky.arc \
+	iso/bf/main.arc \
+	iso/bf/dead.arc \
+	iso/gf/main.arc \
+	iso/gf/tut.arc \
+	iso/gf/speaker.tim \
+	iso/sky/main.arc \
+	iso/skya/main.arc \
+	iso/skym/main.arc \
+	iso/skycut/main.arc \
+	iso/gfm/main.arc \
+	iso/clucky/main.arc \
+	iso/menu/characters/mbf.arc \
+	iso/menu/characters/mgf.arc \
+	iso/menu/characters/msky.arc \
+	iso/week1/back.arc \
+	iso/week2/back.arc 
+
+iso/%.tim: iso/%.png
+	tools/funkintimconv/funkintimconv $@ $<
+
+iso/%.arc:
+	tools/funkinarcpak/funkinarcpak $@ $^
+
+# Menu
+iso/menu/menu.arc: iso/menu/back.tim iso/menu/ng.tim iso/menu/story.tim iso/menu/options/options.tim iso/menu/title.tim iso/menu/hud1.tim iso/menu/hud2.tim
+
+# Character portraits
+iso/stage/portraits/bf.arc: iso/stage/portraits/bf.tim iso/stage/portraits/gf.tim
+iso/stage/portraits/sky.arc: iso/stage/portraits/sky0.tim iso/stage/portraits/sky1.tim
+
+iso/menu/backgrounds/week.arc: iso/menu/backgrounds/week0.tim iso/menu/backgrounds/week1.tim iso/menu/backgrounds/week2.tim iso/menu/backgrounds/week3.tim iso/menu/backgrounds/week4.tim iso/menu/backgrounds/week5.tim iso/menu/backgrounds/week6.tim iso/menu/backgrounds/week7.tim
+
+# BF
+iso/bf/main.arc: iso/bf/bf0.tim iso/bf/bf1.tim iso/bf/bf2.tim iso/bf/bf3.tim iso/bf/bf4.tim iso/bf/bf5.tim iso/bf/bf6.tim iso/bf/dead0.tim
+iso/bf/dead.arc: iso/bf/dead1.tim iso/bf/dead2.tim iso/bf/retry.tim
+
+# GF
+iso/gf/main.arc: iso/gf/gf0.tim iso/gf/gf1.tim iso/gf/gf2.tim
+iso/gf/tut.arc: iso/gf/tut0.tim iso/gf/tut1.tim
+
+# Sky
+iso/sky/main.arc: iso/sky/idle0.tim iso/sky/idle1.tim iso/sky/idle2.tim iso/sky/idle3.tim iso/sky/idle4.tim iso/sky/idle5.tim iso/sky/idle6.tim iso/sky/idle7.tim iso/sky/left0.tim iso/sky/left1.tim iso/sky/down0.tim iso/sky/down1.tim iso/sky/up0.tim iso/sky/up1.tim iso/sky/right0.tim iso/sky/right1.tim iso/sky/right2.tim
+
+# Sky annoyed
+iso/skya/main.arc: iso/skya/idle0.tim iso/skya/idle1.tim iso/skya/idle2.tim iso/skya/idle3.tim iso/skya/left0.tim iso/skya/left1.tim iso/skya/left2.tim iso/skya/down0.tim iso/skya/down1.tim iso/skya/down2.tim iso/skya/down3.tim iso/skya/up0.tim iso/skya/up1.tim iso/skya/right0.tim iso/skya/right1.tim iso/skya/right2.tim iso/skya/right3.tim iso/skya/upalt.tim iso/skya/pidle0.tim iso/skya/pidle1.tim iso/skya/pidle2.tim iso/skya/pidle3.tim iso/skya/pleft0.tim iso/skya/pleft1.tim iso/skya/pleft2.tim iso/skya/pleft3.tim iso/skya/pdown0.tim iso/skya/pdown1.tim iso/skya/pdown2.tim iso/skya/pdown3.tim iso/skya/pup0.tim iso/skya/pup1.tim iso/skya/pright0.tim iso/skya/pright1.tim iso/skya/pright2.tim iso/skya/pright3.tim iso/skya/plefta0.tim iso/skya/plefta1.tim iso/skya/pdowna0.tim iso/skya/pdowna1.tim iso/skya/pupalt0.tim iso/skya/pupalt1.tim
+
+# Sky Mad
+iso/skym/main.arc: iso/skym/idle0.tim iso/skym/idle1.tim iso/skym/idle2.tim iso/skym/left0.tim iso/skym/left1.tim iso/skym/down0.tim iso/skym/down1.tim iso/skym/up0.tim iso/skym/up1.tim iso/skym/up2.tim iso/skym/right0.tim iso/skym/right1.tim iso/skym/right2.tim
+
+# Sky Cutscene
+iso/skycut/main.arc: iso/skycut/idle0.tim iso/skycut/idle1.tim iso/skycut/idle2.tim iso/skycut/idle3.tim iso/skycut/idle4.tim iso/skycut/idle5.tim iso/skycut/idle6.tim iso/skycut/idle7.tim iso/skycut/idle8.tim iso/skycut/idle9.tim iso/skycut/idle10.tim iso/skycut/idle11.tim iso/skycut/idle12.tim iso/skycut/idle13.tim iso/skycut/idle14.tim iso/skycut/idle15.tim
+
+# GF Manifest
+iso/gfm/main.arc: iso/gfm/idle0.tim iso/gfm/idle1.tim iso/gfm/idle2.tim iso/gfm/idle3.tim iso/gfm/idle4.tim
+
+# Clucky
+iso/clucky/main.arc: iso/clucky/idle0.tim iso/clucky/idle1.tim iso/clucky/left.tim iso/clucky/down.tim iso/clucky/up.tim iso/clucky/right.tim
+
+# Menu BF
+iso/menu/characters/mbf.arc: iso/menu/characters/menubf.tim
+
+# Menu GF
+iso/menu/characters/mgf.arc: iso/menu/characters/menugf0.tim iso/menu/characters/menugf1.tim
+
+# Menu Sky
+iso/menu/characters/msky.arc: iso/menu/characters/menusky.tim
+
+# Week 1
+iso/week1/back.arc: iso/week1/floor.tim
+
+# Week 2
+iso/week2/back.arc: iso/week2/back0.tim iso/week2/back1.tim iso/week2/floor.tim iso/week2/end1.tim iso/week2/end2.tim iso/week2/end3.tim
+
+# Rule to clean all .arc and .tim files
+clean:
+	echo "Cleaning .arc and .tim files:"
+	find iso -type f \( -name "*.arc" -o -name "*.tim" \) -print -delete
