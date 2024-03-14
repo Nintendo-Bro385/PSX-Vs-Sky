@@ -650,24 +650,22 @@ void Menu_Tick(void)
 				switch (beat)
 				{
 					case 3:
-						menu.font_bold.draw(&menu.font_bold, "PRESENT", SCREEN_WIDTH2, SCREEN_HEIGHT2 + 32, FontAlign_Center);
+						menu.font_bold.draw(&menu.font_bold, "PRESENT", SCREEN_WIDTH2, SCREEN_HEIGHT2 -64, FontAlign_Center);
 				//Fallthrough
 					case 2:
 					case 1:
-						menu.font_bold.draw(&menu.font_bold, "NINJAMUFFIN",   SCREEN_WIDTH2, SCREEN_HEIGHT2 - 32, FontAlign_Center);
-						menu.font_bold.draw(&menu.font_bold, "PHANTOMARCADE", SCREEN_WIDTH2, SCREEN_HEIGHT2 - 16, FontAlign_Center);
-						menu.font_bold.draw(&menu.font_bold, "KAWAISPRITE",   SCREEN_WIDTH2, SCREEN_HEIGHT2,      FontAlign_Center);
-						menu.font_bold.draw(&menu.font_bold, "EVILSKER",      SCREEN_WIDTH2, SCREEN_HEIGHT2 + 16, FontAlign_Center);
 						break;
 					
 					case 7:
-						menu.font_bold.draw(&menu.font_bold, "NEWGROUNDS",    SCREEN_WIDTH2, SCREEN_HEIGHT2 - 32, FontAlign_Center);
-						Gfx_BlitTex(&menu.tex_ng, &src_ng, (SCREEN_WIDTH - 128) >> 1, SCREEN_HEIGHT2 - 16);
+						menu.font_bold.draw(&menu.font_bold, "NINTENDO BRO", SCREEN_WIDTH2, SCREEN_HEIGHT2 - 40, FontAlign_Center);
+						menu.font_bold.draw(&menu.font_bold, "CUCKYDEV",      SCREEN_WIDTH2, SCREEN_HEIGHT2  +24, FontAlign_Center);
+						Menu_DrawHealth(20, 240, SCREEN_HEIGHT2 - 42, true);
+						Menu_DrawHealth(22, 215, SCREEN_HEIGHT2 + 16, true);
 				//Fallthrough
 					case 6:
 					case 5:
-						menu.font_bold.draw(&menu.font_bold, "IN ASSOCIATION", SCREEN_WIDTH2, SCREEN_HEIGHT2 - 64, FontAlign_Center);
-						menu.font_bold.draw(&menu.font_bold, "WITH",           SCREEN_WIDTH2, SCREEN_HEIGHT2 - 48, FontAlign_Center);
+						menu.font_bold.draw(&menu.font_bold, "FLOP ENGINE BY", SCREEN_WIDTH2, SCREEN_HEIGHT2 - 64, FontAlign_Center);
+						menu.font_bold.draw(&menu.font_bold, "PSX FUNKIN BY", SCREEN_WIDTH2, SCREEN_HEIGHT2, FontAlign_Center);
 						break;
 					
 					case 11:
@@ -679,13 +677,13 @@ void Menu_Tick(void)
 						break;
 					
 					case 15:
-						menu.font_bold.draw(&menu.font_bold, "FUNKIN", SCREEN_WIDTH2, SCREEN_HEIGHT2 + 8, FontAlign_Center);
+						menu.font_bold.draw(&menu.font_bold, "FOREVER", SCREEN_WIDTH2, SCREEN_HEIGHT2 + 8, FontAlign_Center);
 				//Fallthrough
 					case 14:
-						menu.font_bold.draw(&menu.font_bold, "NIGHT", SCREEN_WIDTH2, SCREEN_HEIGHT2 - 8, FontAlign_Center);
+						menu.font_bold.draw(&menu.font_bold, "WIFE", SCREEN_WIDTH2, SCREEN_HEIGHT2 - 8, FontAlign_Center);
 				//Fallthrough
 					case 13:
-						menu.font_bold.draw(&menu.font_bold, "FRIDAY", SCREEN_WIDTH2, SCREEN_HEIGHT2 - 24, FontAlign_Center);
+						menu.font_bold.draw(&menu.font_bold, "BFS", SCREEN_WIDTH2, SCREEN_HEIGHT2 - 24, FontAlign_Center);
 						break;
 				}
 				break;
@@ -1214,7 +1212,7 @@ void Menu_Tick(void)
 			const char *name;
 			const char *tracks[3];
 		} menu_options[] = {
-			{NULL, StageId_1_1, "SKY BY BFSWIFEFOREVER", {"WIFE FOREVER", "SKY", "MANIFEST"}},
+			{NULL, StageId_1_1, "SKY BY @BFSWIFEFOREVER", {"WIFE-FOREVER", "SKY", "MANIFEST"}},
 		};
             
             //Initialize page
@@ -1286,7 +1284,7 @@ void Menu_Tick(void)
             }
             
             //Draw week name and tracks
-            menu.font_bold.draw(&menu.font_bold,
+            menu.font_arial.draw(&menu.font_arial,
                 menu_options[menu.select].name,
                 SCREEN_WIDTH - 6,
                 6,
